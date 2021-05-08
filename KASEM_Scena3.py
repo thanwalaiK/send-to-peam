@@ -80,7 +80,7 @@ def send_to_peam1(output,test_id):
 
 
 def send_to_peam2(trial):
-    with open("/Raytest/ray_results/my_exp4'+trial+"/result.json", 'r') as j:
+    with open('/Raytest/ray_results/my_exp4'+trial+"/result.json", 'r') as j:
         mean_reward_data = json.load(j)
     
     
