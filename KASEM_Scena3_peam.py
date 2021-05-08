@@ -335,7 +335,7 @@ def get_mean_speed():
     
     speed = [traci.lanearea.getLastStepMeanSpeed(e)*traci.lanearea.getLastStepVehicleNumber(e) for e in NAME.loc[:,'id'] if traci.lanearea.getLastStepMeanSpeed(e)>=0]
 #     print(speed)
-          num_veh = [traci.lanearea.getLastStepVehicleNumber(i) for i in NAME.loc[:,'id']]
+    num_veh = [traci.lanearea.getLastStepVehicleNumber(i) for i in NAME.loc[:,'id']]
     mean_speed = sum(speed)/max(sum(num_veh),1)
 #     print('speed',mean_speed)
     return mean_speed
