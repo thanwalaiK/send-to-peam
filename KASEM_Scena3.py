@@ -64,16 +64,16 @@ FLOW_detector = ['NARANONG_WB_FP2_TP3_FLOW', 'SUNLAKAKHON_NB_FP2_TP3', 'SUNLAKAK
 def send_to_peam1(output,test_id):
 #     #do something??
     
-    server_ip = "https://exec.iotcloudserve.net/json-save/"
+#     server_ip = "https://exec.iotcloudserve.net/json-save/"
 
-    event_data = output
+#     event_data = output
 
-    response = requests.post(server_ip+str(test_id), json=event_data)
-    #json_data = json.loads(response.text)
-    #print(type(response))
-    #print(response)
+#     response = requests.post(server_ip+str(test_id), json=event_data)
+#     #json_data = json.loads(response.text)
+#     #print(type(response))
+#     #print(response)
 
-    return response
+    return #response
 
 
 # In[6]:
