@@ -64,23 +64,23 @@ FLOW_detector = ['NARANONG_WB_FP2_TP3_FLOW', 'SUNLAKAKHON_NB_FP2_TP3', 'SUNLAKAK
 def send_to_peam1(output,test_id):
 #     #do something??
     
-#     server_ip = "https://exec.iotcloudserve.net/json-save/"
+    server_ip = "https://exec.iotcloudserve.net/json-save/"
 
-#     event_data = output
+    event_data = output
 
-#     response = requests.post(server_ip+str(test_id), json=event_data)
-#     #json_data = json.loads(response.text)
-#     #print(type(response))
-#     #print(response)
+    response = requests.post(server_ip+str(test_id), json=event_data)
+    #json_data = json.loads(response.text)
+    #print(type(response))
+    #print(response)
 
-    return #response
+    return response
 
 
 # In[6]:
 
 
 def send_to_peam2(trial):
-    with open('"/Raytest/ray_results/my_exp4'+trial+"/result.json", 'r') as j:
+    with open('/Raytest/ray_results/my_exp4'+trial+"/result.json", 'r') as j:
         mean_reward_data = json.load(j)
     
     
@@ -543,7 +543,7 @@ class MyEnv3(MultiAgentEnv):
 #         self.action_space = gym.spaces.Discrete(32)
         self.dateTimeObj = ''
         print(self.dateTimeObj)
-        with open( "./Raytest/ray_results/result"+self.name+".csv" , 'w', newline='') as csv_file:
+        with open( "/Raytest/ray_results/result"+self.name+".csv" , 'w', newline='') as csv_file:
                 header = ['rewards', 'throughput','backlog',"meanWaitingTime", "meanTravelTime","meanSpeed","action"]
                 writer = csv.DictWriter(csv_file, fieldnames = header)
                 writer.writeheader()         
@@ -668,7 +668,7 @@ class MyEnv3(MultiAgentEnv):
 #                     writer = csv.DictWriter(csv_file, fieldnames = header)
 #                     writer.writerow({'action': self.log_action})
                                  
-            with open( "./Raytest/ray_results/result"+self.name+".csv" , 'a', newline='') as csv_file:
+            with open( "/Raytest/ray_results/result"+self.name+".csv" , 'a', newline='') as csv_file:
                 header = ['rewards', 'throughput','backlog',"meanWaitingTime", "meanTravelTime","meanSpeed","action"]
                 writer = csv.DictWriter(csv_file, fieldnames = header)
                 writer.writerow({'rewards': self.rewards, 
