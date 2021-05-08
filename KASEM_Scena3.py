@@ -543,7 +543,7 @@ class MyEnv3(MultiAgentEnv):
 #         self.action_space = gym.spaces.Discrete(32)
         self.dateTimeObj = ''
         print(self.dateTimeObj)
-        with open( "./Raytest/ray_results/result"+self.name+".csv" , 'w', newline='') as csv_file:
+        with open( "/Raytest/ray_results/result"+self.name+".csv" , 'w', newline='') as csv_file:
                 header = ['rewards', 'throughput','backlog',"meanWaitingTime", "meanTravelTime","meanSpeed","action"]
                 writer = csv.DictWriter(csv_file, fieldnames = header)
                 writer.writeheader()         
@@ -668,7 +668,7 @@ class MyEnv3(MultiAgentEnv):
 #                     writer = csv.DictWriter(csv_file, fieldnames = header)
 #                     writer.writerow({'action': self.log_action})
                                  
-            with open( "./Raytest/ray_results/result"+self.name+".csv" , 'a', newline='') as csv_file:
+            with open( "/Raytest/ray_results/result"+self.name+".csv" , 'a', newline='') as csv_file:
                 header = ['rewards', 'throughput','backlog',"meanWaitingTime", "meanTravelTime","meanSpeed","action"]
                 writer = csv.DictWriter(csv_file, fieldnames = header)
                 writer.writerow({'rewards': self.rewards, 
@@ -695,7 +695,7 @@ class MyEnv3(MultiAgentEnv):
 from ray.tune import Callback
 class MyCallback(Callback):
     def on_trial_start(self, iteration, trials, trial, **info):
-        print(f"I am in callback. This is iteration {iteration} inside trial {trial}")
+        print("I am in callback. This is iteration {iteration} inside trial {trial}")
 #         dateTimeObj = datetime.datetime.now()
 #         dateTimeObj = dateTimeObj.strftime("%d-%b-%Y-%H-%M-%S-%f")
 #         with open( "./Raytest/ray_results/"+dateTimeObj+".csv" , 'a', newline='') as csv_file:
